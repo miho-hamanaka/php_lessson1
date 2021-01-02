@@ -3,13 +3,13 @@
 
 echo '読書ログを登録してください' . PHP_EOL;
 echo '書籍名:';
-$title = fgets(STDIN);
+$title = trim(fgets(STDIN));
 
 echo '登録が完了しました' . PHP_EOL . PHP_EOL;
 
 echo '読書ログを表示します' . PHP_EOL;
 echo '書籍名:' . $title . PHP_EOL;
-//echo "書籍: {$title}";
+
 
 // echo '書籍名: 銀河鉄道の夜' . PHP_EOL;
 // echo '著者名: 宮沢賢治' . PHP_EOL;
