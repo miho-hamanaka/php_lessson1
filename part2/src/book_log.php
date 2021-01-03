@@ -6,6 +6,9 @@ $status = '';
 $evaluation = '';
 $comment = '';
 
+//読書ログを格納する配列
+$register = [];
+
 while (true) {
 
     echo '1. 読書ログを登録' . PHP_EOL;
@@ -34,6 +37,17 @@ while (true) {
         $comment = trim(fgets(STDIN));
 
         echo '登録が完了しました' . PHP_EOL . PHP_EOL;
+
+        //用意した読書ログを格納する配列に、連想配列でラベルつけて要素を追加
+        $register[] = [
+            'title' => $title,
+            'author' => $author,
+            'status' => $status,
+            'evaluation' => $evaluation,
+            'comment' => $comment,   
+        ];
+        //格納しているか確認
+        //var_export($register);
         
     } elseif ($num === '2'){
         //読書ログを表示
