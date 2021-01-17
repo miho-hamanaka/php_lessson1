@@ -48,10 +48,11 @@ while (true) {
         ];
         
     } elseif ($num === '2'){
+
+        echo '読書ログを表示します' . PHP_EOL;
         
         //配列に格納した読書ログ、全要素をループ表示
         foreach ($reviews as $review) {
-            echo '読書ログを表示します' . PHP_EOL;
             echo '書籍名:' . $review['title'] . PHP_EOL;
             echo '著者名:' . $review['author'] . PHP_EOL;
             echo '読書状況:' . $review['status'] . PHP_EOL;
