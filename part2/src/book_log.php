@@ -50,7 +50,7 @@ while (true) {
     } elseif ($num === '2'){
 
         echo '読書ログを表示します' . PHP_EOL;
-        
+
         //配列に格納した読書ログ、全要素をループ表示
         foreach ($reviews as $review) {
             echo '書籍名:' . $review['title'] . PHP_EOL;
@@ -66,13 +66,3 @@ while (true) {
         break;
     }
 }
-//TODO:あとで削除 配列に連想配列で格納した全要素が取得できているかを確認するためのもの
-//var_export($reviews);
-
-
-// echo '書籍名: 銀河鉄道の夜' . PHP_EOL;
-// echo '著者名: 宮沢賢治' . PHP_EOL;
-// echo '読書状況: 読了' . PHP_EOL;
-// echo '評価: 5' . PHP_EOL;
-// echo '感想: 本当の幸せとはな何だろうかと考えさせられる作品だった。' . PHP_EOL;
-
