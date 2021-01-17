@@ -1,5 +1,36 @@
 <?php
 
+//読書ログ登録を関数化
+function createReview ()
+{
+    echo '読書ログを登録してください' . PHP_EOL;
+    echo '書籍名:';
+    $title = trim(fgets(STDIN));
+
+    echo '著者名:';
+    $author = trim(fgets(STDIN));
+
+    echo '読書状況（未読,読んでる,読了）:';
+    $status = trim(fgets(STDIN));
+
+    echo '評価（5点満点の整数）:';
+    $evaluation = trim(fgets(STDIN));
+
+    echo '感想:';
+    $comment = trim(fgets(STDIN));
+
+    echo '登録が完了しました' . PHP_EOL . PHP_EOL;
+
+    //登録するレビュー(連想配列)を戻り値として返す
+    return [
+        'title' => $title,
+        'author' => $author,
+        'status' => $status,
+        'evaluation' => $evaluation,
+        'comment' => $comment,   
+    ];
+}
+
 //読書ログを格納する配列
 $reviews = [];
 
@@ -13,33 +44,8 @@ while (true) {
     $num = trim(fgets(STDIN));
 
     if ($num === '1') {
-        //読書ログを登録
-        echo '読書ログを登録してください' . PHP_EOL;
-        echo '書籍名:';
-        $title = trim(fgets(STDIN));
-
-        echo '著者名:';
-        $author = trim(fgets(STDIN));
-
-        echo '読書状況（未読,読んでる,読了）:';
-        $status = trim(fgets(STDIN));
-
-        echo '評価（5点満点の整数）:';
-        $evaluation = trim(fgets(STDIN));
-
-        echo '感想:';
-        $comment = trim(fgets(STDIN));
-
-        echo '登録が完了しました' . PHP_EOL . PHP_EOL;
-
-        //用意した読書ログを格納する配列に、連想配列でラベルつけて要素を追加
-        $reviews[] = [
-            'title' => $title,
-            'author' => $author,
-            'status' => $status,
-            'evaluation' => $evaluation,
-            'comment' => $comment,   
-        ];
+        //関数の外で配列に戻す、関数化した読書ログ登録(戻り値=連想配列)を配列reviewsに格納
+        $reviews[] = createReview();
         
     } elseif ($num === '2'){
 
