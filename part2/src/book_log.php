@@ -1,11 +1,5 @@
 <?php
 
-$title = '';
-$author = '';
-$status = '';
-$evaluation = '';
-$comment = '';
-
 //読書ログを格納する配列
 $reviews = [];
 
