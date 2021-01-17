@@ -31,6 +31,22 @@ function createReview ()
     ];
 }
 
+//読書ログ表示を関数化、引数に配列reviewsを入れる
+function displayReview($reviews)
+{
+    echo '読書ログを表示します' . PHP_EOL;
+    
+    //配列に格納した読書ログ、全要素をループ表示
+    foreach ($reviews as $review) {
+        echo '書籍名:' . $review['title'] . PHP_EOL;
+        echo '著者名:' . $review['author'] . PHP_EOL;
+        echo '読書状況:' . $review['status'] . PHP_EOL;
+        echo '評価:' . $review['evaluation'] . PHP_EOL;
+        echo '感想:' . $review['comment'] . PHP_EOL;
+        echo '-------------' . PHP_EOL;
+    }
+}
+
 //読書ログを格納する配列
 $reviews = [];
 
@@ -48,18 +64,8 @@ while (true) {
         $reviews[] = createReview();
         
     } elseif ($num === '2'){
-
-        echo '読書ログを表示します' . PHP_EOL;
-
-        //配列に格納した読書ログ、全要素をループ表示
-        foreach ($reviews as $review) {
-            echo '書籍名:' . $review['title'] . PHP_EOL;
-            echo '著者名:' . $review['author'] . PHP_EOL;
-            echo '読書状況:' . $review['status'] . PHP_EOL;
-            echo '評価:' . $review['evaluation'] . PHP_EOL;
-            echo '感想:' . $review['comment'] . PHP_EOL;
-            echo '-------------' . PHP_EOL;
-        }
+        //関数化した読書ログ表示(引数=配列reviews)を呼び出し ※戻り値なしの場合
+        displayReview($reviews);
 
     } elseif ($num === '9') {
         //アプリケーションを終了する
